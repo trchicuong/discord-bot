@@ -33,6 +33,7 @@ client.login(client.config.app.token).catch(async (e) => {
 });
 
 client.on('guildMemberAdd', member => {
-    let role = member.guild.roles.cache.find(x => x.name == client.config.app.role); 
+    let role = member.guild.roles.cache.find(x => x.name === client.config.app.role); 
+    
     member.roles.add(role)
 });
