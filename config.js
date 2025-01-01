@@ -8,6 +8,7 @@ module.exports = {
         loopMessage: false,
         lang: 'en',
         enableEmojis: false,
+        role: 'xxx',
     },
 
     emojis:{
