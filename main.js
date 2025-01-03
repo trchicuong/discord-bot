@@ -3,6 +3,7 @@ require('dotenv').config();
 const { Player } = require('discord-player');
 const { YoutubeiExtractor } = require('discord-player-youtubei');
 const { Client, GatewayIntentBits } = require('discord.js');
+const { name } = require('./commands/core/activebadge');
 
 global.client = new Client({
     intents: [
@@ -33,7 +34,10 @@ client.login(client.config.app.token).catch(async (e) => {
 });
 
 client.on('guildMemberAdd', member => {
-    let role = member.guild.roles.cache.find(x => x.name === client.config.app.role); 
-    
-    member.roles.add(role)
+    if (client.guilds.cache.get(client.config.app.guild)) {
+        let role = member.guild.roles.cache.find(x => x.name === client.config.app.role); 
+        member.roles.add(role)
+    } else {
+        return;
+    }
 });
