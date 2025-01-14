@@ -2,7 +2,7 @@
 
 Looking for a code for a music bot? This fully open-source code is made for your project!
 
-If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/Pvw2vywSwv).
+If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/cATDw4uXjp).
 
 ### Download
 
@@ -118,3 +118,35 @@ Now in your terminal run the following commands assuming you are in the same dir
 `node .` (or `node main.js`)
 
 and Done, your bot should be running!
+
+### ❗Supported languages: 
+
+| Code | Language | Code | Language | Code | Language |
+| ---- | -------- | ---- | -------- | ---- | -------- |
+| `af` | Afrikaans | `bn` | Bengali | `da` | Danish |
+| `sq` | Albanian | `bg` | Bulgarian | `nl` | Dutch |
+| `ar` | Arabic | `ca` | Catalan | `en` | English |
+| `hy` | Armenian | `hr` | Croatian | `et` | Estonian |
+| `eu` | Basque | `cs` | Czech | `fi` | Finnish |
+| `be` | Belarusian | `cy` | Welsh | `fr` | French |
+| `bs` | Bosnian | `de` | German | `ga` | Irish |
+| `ja` | Japanese | `jv` | Javanese | `ka` | Georgian |
+| `kn` | Kannada | `kk` | Kazakh | `km` | Khmer |
+| `ko` | Korean | `ku` | Kurdish | `ky` | Kyrgyz |
+| `la` | Latin | `lb` | Luxembourgish | `lo` | Lao |
+| `lt` | Lithuanian | `lv` | Latvian | `mg` | Malagasy |
+| `mi` | Maori | `mk` | Macedonian | `ml` | Malayalam |
+| `mn` | Mongolian | `mr` | Marathi | `ms` | Malay |
+| `mt` | Maltese | `my` | Burmese | `ne` | Nepali |
+| `no` | Norwegian | `ny` | Chichewa | `pa` | Punjabi |
+| `pl` | Polish | `ps` | Pashto | `pt` | Portuguese |
+| `ro` | Romanian | `ru` | Russian | `sd` | Sindhi |
+| `si` | Sinhalese | `sk` | Slovak | `sl` | Slovenian |
+| `sm` | Samoan | `sn` | Shona | `so` | Somali |
+| `sq` | Albanian | `sr` | Serbian | `st` | Sesotho |
+| `su` | Sundanese | `sv` | Swedish | `sw` | Swahili |
+| `ta` | Tamil | `te` | Telugu | `th` | Thai |
+| `tr` | Turkish | `uk` | Ukrainian | `ur` | Urdu |
+| `vi` | Vietnamese | `xh` | Xhosa | `yi` | Yiddish |
+| `zu` | Zulu | `id` | Indonesian | | |
+
