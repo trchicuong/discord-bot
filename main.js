@@ -36,8 +36,8 @@ client.login(client.config.app.token).catch(async (e) => {
 client.on('guildMemberAdd', member => {
     if (client.guilds.cache.get(client.config.app.guild)) {
         let role = member.guild.roles.cache.find(x => x.name === client.config.app.role); 
-        member.roles.add(role)
+        member.roles.add(role);
     } else {
-        return;
+        console.error('❌ Wrong GuildID! ❌');
     }
 });
