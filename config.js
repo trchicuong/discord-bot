@@ -1,7 +1,7 @@
 module.exports = {
     app: {
         token: process.env.DISCORD_TOKEN || 'xxx',
-        playing: 'Developed with love by cuongisreal IT ❤️',
+        playing: '🎼 24/7 cuongisreal IT ❤️',
         global: true,
         guild: process.env.GUILD_ID || 'xxx',
         extraMessages: false,

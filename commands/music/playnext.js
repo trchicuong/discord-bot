@@ -2,6 +2,9 @@ const { ApplicationCommandOptionType, EmbedBuilder } = require('discord.js');
 const { QueryType, useMainPlayer, useQueue } = require('discord-player');
 const { Translate } = require('../../process_tools');
 
+// Regular expression to match YouTube URLs
+const youtubeRegex = /^(https?\:\/\/)?(www\.youtube\.com|youtu\.be)\/.+$/;
+
 module.exports = {
     name: 'playnext',
     description:("Play a song right after this one"),
@@ -22,6 +25,13 @@ module.exports = {
         if (!queue?.isPlaying()) return inter.editReply({ content: await Translate(`No music currently playing <${inter.member}>... try again ? <❌>`) }).then(() => setTimeout(() => inter.deleteReply() ,3000 ));
 
         const song = inter.options.getString('song');
+
+        // Check if the input is a valid YouTube URL
+        if (!youtubeRegex.test(song)) {
+            const errorEmbed = new EmbedBuilder().setColor('#ff0000')
+                .setAuthor({ name: await Translate('Please provide a valid YouTube link!') });
+            return inter.editReply({ embeds: [errorEmbed] }).then(() => setTimeout(() => inter.deleteReply(), 3000));
+        }
         const res = await player.search(song, {
             requestedBy: inter.member,
             searchEngine: QueryType.AUTO

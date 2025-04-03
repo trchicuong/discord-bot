@@ -22,13 +22,14 @@ Example configuration:
 module.exports = {
     app: {
         token: process.env.DISCORD_TOKEN || 'xxx',
-        playing: 'Developed with ❤️ by cuongisreal IT',
+        playing: '🎼 24/7 cuongisreal IT ❤️',
         global: true,
         guild: process.env.GUILD_ID || 'xxx',
         extraMessages: false,
         loopMessage: false,
         lang: 'en',
         enableEmojis: false,
+        role: 'xxx',
     },
     emojis: {
         'back': '⏪',
@@ -65,16 +66,28 @@ module.exports = {
 
 #### Key settings:
 - **`app.token`**: Bot token (Get it from [Discord Developers](https://discordapp.com/developers/applications)).
-- **`app.playing`**: Bot activity status.
+- **`app.playing`**: Bot activity status message.
 - **`app.global`**: If `true`, commands will be available on all servers (may take time to update).
-- **`app.guild`**: The specific server where commands will be loaded (if `app.global = false`).
-- **`app.lang`**: Bot language (see the supported languages below).
+- **`app.guild`**: Specific server where commands will be loaded (if `app.global = false`).
+- **`app.extraMessages`**: If true, bot will show additional messages for users.
+- **`app.loopMessage`**: If true, bot will show a message when looping is enabled.
+- **`app.enableEmojis`**: If true, bot will use emojis for command controls (e.g., ⏪ for back, ⏩ for skip).
+- **`app.lang`**: Language of the bot (see the supported languages below).
+- **`app.role`**: The role that the bot will automatically assign to new members (auto-role feature).
 - **`opt.DJ.enabled`**: Enable DJ mode.
 - **`opt.DJ.roleName`**: Name of the DJ role.
+- **`opt.DJ.commands`**: List of custom DJ commands (e.g., ['!play', '!skip']).
+- **`opt.Translate_Timeout`**: Timeout for translation (in ms).
 - **`opt.maxVol`**: Maximum volume limit.
 - **`opt.spotifyBridge`**: Support for playing Spotify tracks.
+- **`opt.volume`**: Default volume level when starting.
 - **`opt.leaveOnEmpty`**: Bot leaves when the queue is empty.
+- **`opt.leaveOnEmptyCooldown`**: The cooldown time before bot leaves the channel when the queue is empty (in ms).
 - **`opt.leaveOnEnd`**: Bot leaves when the playlist ends.
+- **`opt.leaveOnEndCooldown`**: The cooldown time before bot leaves the channel after the playlist ends (in ms).
+- **`opt.discordPlayer.ytdlOptions`**: Options for ytdl-core (e.g., audio quality and buffer size).
+
+
 
 ---
 ### 🛠 Installation

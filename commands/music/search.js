@@ -16,6 +16,7 @@ module.exports = {
     ],
 
     async execute({ client, inter }) {
+        /*
         const player = useMainPlayer();
         const song = inter.options.getString('song');
 
@@ -29,7 +30,7 @@ module.exports = {
         const queue = player.nodes.create(inter.guild, {
             metadata: {
              channel: inter.channel
-                    },
+            },
             spotifyBridge: client.config.opt.spotifyBridge,
             volume: client.config.opt.defaultvolume,
             leaveOnEnd: client.config.opt.leaveOnEnd,
@@ -81,5 +82,13 @@ module.exports = {
         collector.on('end', async (msg, reason) => {
             if (reason === 'time') return inter.followUp({ content: await Translate(`Search timed out <${inter.member}>... try again ? <❌>`) });
         });
+        */
+        const embed = new EmbedBuilder()
+        .setColor('#ff0000')
+        .setAuthor({ name: await Translate('This feature is currently unavailable due to issues with the bot library'), iconURL: client.user.displayAvatarURL({ size: 1024, dynamic: true }) })
+        .setTimestamp()
+        .setFooter({ text: await Translate('Developed with love by cuongisreal IT <❤️>'), iconURL: inter.member.displayAvatarURL({ dynamic: true }) });
+
+        return inter.editReply({ embeds: [embed] });
     }
 }
