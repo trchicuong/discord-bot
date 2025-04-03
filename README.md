@@ -1,26 +1,28 @@
-# DISCORD BOT
+# Discord Music Bot - Open Source Project
 
-Looking for a code for a music bot? This fully open-source code is made for your project!
+### 🚀 Introduction
+This is an open-source Discord music bot! If you encounter any issues or need help, join the support server [here](https://discord.gg/NNPDFufe4w).
 
-If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/NNPDFufe4w).
+---
+### 📥 Download
+**Clone the repository:**
+```bash
+git clone https://github.com/trchicuong/discord-bot.git
+```
+Or download the `.zip` file from the repository.
 
-### Download
+---
+### ⚙️ Configuration
+#### 1. Set up `.env`
+- Rename `.env.example` to `.env`
 
-Clone repo:
-`git clone https://github.com/trchicuong/discord-bot.git`
-Or download Zip
-
-### Configuration
-
-Important!!! In order to work you need to rename `.env.example` to `.env`
-
-Open the configuration file located in the main folder `config.js`.
-
+#### 2. Edit `config.js`
+Example configuration:
 ```js
 module.exports = {
     app: {
         token: process.env.DISCORD_TOKEN || 'xxx',
-        playing: 'Developed with love by cuongisreal IT ❤️',
+        playing: 'Developed with ❤️ by cuongisreal IT',
         global: true,
         guild: process.env.GUILD_ID || 'xxx',
         extraMessages: false,
@@ -28,8 +30,7 @@ module.exports = {
         lang: 'en',
         enableEmojis: false,
     },
-
-    emojis:{
+    emojis: {
         'back': '⏪',
         'skip': '⏩',
         'ResumePause': '⏯️',
@@ -38,7 +39,6 @@ module.exports = {
         'volumeDown': '🔉',
         'loop': '🔁',
     },
-
     opt: {
         DJ: {
             enabled: false,
@@ -63,66 +63,38 @@ module.exports = {
 };
 ```
 
-Basic configuration
+#### Key settings:
+- **`app.token`**: Bot token (Get it from [Discord Developers](https://discordapp.com/developers/applications)).
+- **`app.playing`**: Bot activity status.
+- **`app.global`**: If `true`, commands will be available on all servers (may take time to update).
+- **`app.guild`**: The specific server where commands will be loaded (if `app.global = false`).
+- **`app.lang`**: Bot language (see the supported languages below).
+- **`opt.DJ.enabled`**: Enable DJ mode.
+- **`opt.DJ.roleName`**: Name of the DJ role.
+- **`opt.maxVol`**: Maximum volume limit.
+- **`opt.spotifyBridge`**: Support for playing Spotify tracks.
+- **`opt.leaveOnEmpty`**: Bot leaves when the queue is empty.
+- **`opt.leaveOnEnd`**: Bot leaves when the playlist ends.
 
-- `app/token`, the token of the bot available on the [Discord Developers](https://discordapp.com/developers/applications) section
-- `app/playing`, the activity of the bot
-- `app/global`, whether the commands will work on all servers or just one (if global they might take up to an hour to show up)
-- `app/guild`, the guild the slash command will be loaded to (this only applies if global is set to false)
-- `app/extraMessages` will increase the amount of bot spam, while you get more infomation (not recommended) 
+---
+### 🛠 Installation
+#### Requirements:
+- **Node.js v18.20.2** ([Download here](https://nodejs.org/en/))
+- **FFmpeg** ([Download here](https://www.ffmpeg.org/))
+- **Yarn** (recommended, download at [yarnpkg.com](https://yarnpkg.com/getting-started/usage))
+- **Code Editor** (recommended: [VS Code](https://code.visualstudio.com/))
 
-- `app/lang` will change the bot client language [__**See below for supported language codes**__]
+#### Install and run the bot:
+```bash
+yarn install  # Or npm install (not recommended)
+node .        # Or node main.js
+```
+That's it! Your bot is now running. 🚀
 
-- `app/Translate_Timeout` will set the time limit the bot has to create the translation succesfully. If the time is out, only the original english version will be printed. Set to `none` if you want to disable it (No Timeout). 
-
-- `app/enableEmojis` will change the player buttons with emojis if set to true. `false` will replace them by basic english words
-- `app/role` role for the Autorole execution bot
-
-- `opt/loopMessage`, if the message that a music is played should be sent when it is looped
-
-DJ mode configuration
-
-- `opt/DJ/enabled`, whether the DJ mode should be activated or not 
-- `opt/DJ/roleName`, the name of the DJ role to be used
-- `opt/DJ/commands`, the list of commands limited to members with the DJ role
-
-Advanced configuration (only change if you know what you are doing)
-
-- `opt/maxVol`, the maximum volume that users can define
-- `opt/spotifyBridge`, takes spotify songs/playlists and searches it on youtube and plays it (highly recommended)
-- `opt/volume`, is the defaul volume the queue will start at
-- `opt/leaveOnEmpty`, if the bot will leave when the queue is empty
-- `opt/leaveOnEmptyCooldown`, the cooldown before the bot leaves when the queue is empty
-- `opt/leaveOnEnd`,  if the bot will leave on finishing the queue
-- `opt/leaveOnEndCooldown`, the cooldown before the bot leaves on finishing the queue
-- `opt/discordPlayer`, options used by discord-player
-
-### Installation
-
-To use the project correctly you will need some tools.
-
-WARNING: You MUST use Node.js version `v18.20.2`, otherwise, you will encounter major compatibility issues.
-
-[FFmpeg](https://www.ffmpeg.org) to process audio ( make sure to download the latest version availble )
-
-[Node JS](https://nodejs.org/en/) (`v18.20.2`) for environment
-
-[yarn](https://yarnpkg.com/getting-started/usage) for package management
-
-Without forgetting of course the code editor, we recommend [visual studio code](https://code.visualstudio.com/) 
-
-Now in your terminal run the following commands assuming you are in the same directory as the project.
-
-`yarn install` (or `npm install` **not recommended** as it might not work)
-
-`node .` (or `node main.js`)
-
-and Done, your bot should be running!
-
-### ❗Supported languages: 
-
+---
+### 🌍 Supported Languages
 | Code | Language | Code | Language | Code | Language |
-| ---- | -------- | ---- | -------- | ---- | -------- |
+|------|---------|------|---------|------|---------|
 | `af` | Afrikaans | `bn` | Bengali | `da` | Danish |
 | `sq` | Albanian | `bg` | Bulgarian | `nl` | Dutch |
 | `ar` | Arabic | `ca` | Catalan | `en` | English |
@@ -150,3 +122,6 @@ and Done, your bot should be running!
 | `vi` | Vietnamese | `xh` | Xhosa | `yi` | Yiddish |
 | `zu` | Zulu | `id` | Indonesian | | |
 
+---
+### 💡 Feedback & Support
+If you have any questions or need assistance, join the support server [here](https://discord.gg/NNPDFufe4w).
