@@ -12,7 +12,7 @@ module.exports = {
     options: [
         {
             name: 'song',
-            description:('The name/url of the track you want to skip to'),
+            description:('The YouTube link of the track you want to skip to'),
             type: ApplicationCommandOptionType.String,
             required: false,
         },

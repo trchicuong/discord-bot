@@ -11,7 +11,7 @@ module.exports = {
     options: [
         {
             name: 'song',
-            description:('The song of the track you want to jump to'),
+            description:('The YouTube link of the track you want to jump to'),
             type: ApplicationCommandOptionType.String,
             required: false,
         },
