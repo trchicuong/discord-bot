@@ -33,11 +33,16 @@ client.login(client.config.app.token).catch(async (e) => {
     }
 });
 
-client.on('guildMemberAdd', member => {
-    if (client.guilds.cache.get(client.config.app.guild) == client.config.app.guild) {
+client.on('guildMemberAdd', async member => {
+    if (member.guild.id === client.config.app.guild) {
         let role = member.guild.roles.cache.find(x => x.name === client.config.app.role); 
         if (role) {
-            member.roles.add(role);
+            try {
+                await member.roles.add(role);
+                console.log(`✅ Added role ${role.name} to ${member.user.tag}`);
+            } catch (err) {
+                console.error('❌ Failed to add role:', err);
+            }
         } else {
             console.error('❌ Wrong role! ❌');
         }
